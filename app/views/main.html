@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        
+        
+        #{get 'moreStyles' /}
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        
+        <link rel="stylesheet" media="screen" href="@{'/public/datepicker/css/bootstrap-datepicker.css'}">
+        
+        <script src="@{'/public/javascripts/jquery-3.6.1.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/jquery.mask.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        
+        <script src="@{'/public/bootstrap/js/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        
+        <script src="@{'/public/datepicker/js/bootstrap-datepicker.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/datepicker/locales/bootstrap-datepicker.pt-BR.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        
+        <script src="@{'/public/javascripts/mascaras.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+    
+		#{if flash.success}
+				<div class="alert alert-success" role="alert">${flash.success}</div>
+		#{/if}
+
+		#{if flash.error}
+			<div class="alert alert-danger" role="alert">${flash.error}</div>
+		#{/if}
+    
+        #{doLayout /}
+        
+        
+    </body>
+</html>

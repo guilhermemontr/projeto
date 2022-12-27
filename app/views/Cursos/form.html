@@ -1,0 +1,68 @@
+#{extends 'main.html' /}
+#{set title:'Cursos' /}
+
+<a href="@{Cursos.form}">Formulário</a>
+<a href="@{Cursos.listar}">Listagem</a>
+<a href="@{Login.sair}">Sair</a>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</br>
+
+
+
+</br>
+
+<style>
+    form {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+</style>
+
+<!-- Form HTML goes here -->
+
+
+
+<form action="@{Cursos.salvar}" method="post" enctype="multipart/form-data">
+
+    <h1>Cadastro de Curso</h1>
+
+	<input type="hidden" name="p.id" value="${eve?.id}">
+
+	<label class="form-label">Nome:</label>
+	<div class="vermelho">#{error 'p.nome' /}</div>
+	<input type="text" name="p.nome" value="${eve?.nome}" class="form-control">
+	</br>
+
+	<label class="form-label">Descrição:</label>
+	<div class="vermelho">#{error 'p.descriçao' /}</div>
+    <textarea name="p.descriçao" class="form-control" rows="3">${eve?.descriçao}</textarea>
+	</br>
+	
+	<label class="form-label">Página Instagram:</label>
+	<input type="url" name="p.insta" value="${eve?.insta}" class="form-control">
+	</br>
+	
+	<label class="form-label">Modalidade:</label>
+	<select name="p.modalidade">
+		<option></option>
+		<option value="integrado" #{if eve?.modalidade == "Integrado"} selected #{/if}>Técnico Integrado</option>
+		<option value="superior" #{if eve?.modalidade == "Superior"} selected #{/if}>Técnico Superior</option>
+		<option value="subsequente" #{if eve?.modalidade == "Subsequente"} selected #{/if}>Subsequente</option>
+		<option value="licenciatura" #{if eve?.modalidade == "Licenciatura"} selected #{/if}>Licenciatura</option>
+		<option value="pos" #{if eve?.modalidade == "Pos"} selected #{/if}>Pós-Graduação</option>
+	</select>
+	</br></br>
+	
+	<label>Foto Curso:</label>
+	<input type="file" name="p.imagem">
+	</br></br>
+	
+	
+	</br>
+	<input type="submit" class="btn btn-primary">
+
+</form>
+

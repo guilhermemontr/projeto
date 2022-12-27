@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Cursos' /}
+
+#{if flash.error}
+	<div class="alert alert-danger" role="alert">${flash.error}</div>
+#{/if}
+
+<a href="@{Cursos.form}">Formulário</a>
+<a href="@{Cursos.listar}">Listagem</a>
+<a href="@{Login.sair}">Sair</a>
+
+</br></br>
+#{if flash.success}
+	<div class="alert alert-success" role="alert">${flash.success}</div>
+#{/if}
+</br>
+
+#{list items: lista, as:'i'}
+
+		<img src = "@{Cursos.mostrarImagem(i.id)}" />
+		
+		${i.nome} - ${i.descriçao} - <a href="${i.insta}">Instagram</a> - ${i.modalidade}  /  
+		
+		<a href='@{Cursos.editar(i.id)}'>Editar</a>
+		<a href='@{Cursos.deletar(i.id)}'>Deletar</a>
+		
+		</br>
+
+#{/list}
+
+

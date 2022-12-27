@@ -1,0 +1,70 @@
+#{extends 'main.html' /}
+#{set title:'Login' /}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+</head>
+<body class="bg-primary bg-opacity-25">
+
+    <section class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto rounded shadow bg-white">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="m-5 text-center">
+                                <h1>Esqueci minha senha...</h1>
+                            </div>
+                            <form action="@@{Login.solicitarNovaSenha}" method="POST" class="m-5">
+                                <div class="mb-3">
+                                    <label class="form-label">Digite seu E-mail:</label>
+                                    <input class="form-control" type="text" name="email">
+                                </div>
+
+                                <div>
+                                    <input type="submit" class="form-control btn btn-primary mt-2" value="Solicitar nova senha">
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div>
+                                <img src="/public/images/erro_login.svg" alt="login" class="img-fluid p-5">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+<form action="@{Login.solicitarNovaSenha}" method="POST">
+
+E-mail <input name="email"> <br/>
+
+<button>Solicitar nova senha</button>
+
+</form> -->

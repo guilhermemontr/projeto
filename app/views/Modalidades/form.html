@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Formulário de Modalidade' /}
+
+<form action="@{Modalidades.salvar}">
+
+	<input type="hidden" name="mod.id" value="${m?.id}">
+	
+	Modalidade <input name="mod.nome" value="${m?.nome}"> <br/>
+	
+	#{if m?.id}
+	
+		Curso:
+		<select>
+		
+		<option></option>
+		
+		#{list items:modalidades, as:'c'}
+			<option value="${c.id}">${c.nome}</option>
+		#{/list}
+		
+		</select>
+	
+	#{/if}
+	
+	<button>Salvar</button>
+
+
+</form>

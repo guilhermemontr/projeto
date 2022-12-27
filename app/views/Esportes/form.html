@@ -1,0 +1,43 @@
+#{extends 'main.html' /}
+#{set title:'Esportes' /}
+
+<a href="@{Esportes.form}" class="link-primary">Formulário</a>
+<a href="@{Esportes.listar}" class="link-primary">Listagem</a>
+<a href="@{Login.sair}">Sair</a>
+</br></br>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<style>
+    form {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+</style>
+
+<form action="@{Esportes.salvar}" method="post" enctype="multipart/form-data">
+
+	<h1>Cadastro de Esporte</h1>
+
+	<input type="hidden" name="p.id" value="${eve?.id}">
+
+	<label class="form-label">Nome:</label>
+	<input type="text" name="p.nome" value="${eve?.nome}" class="form-control">
+	</br>
+
+	<label>Descrição:</label>
+	<input type="text" name="p.descriçao" value="${eve?.descriçao}" class="form-control">
+	</br>
+	
+	<label>Programas Inseridos:</label>
+	<input type="text" name="p.programas" value="${eve?.programas}" class="form-control">
+	</br>
+	
+	<label>Foto do Esporte:</label>
+	<input type="file" name="p.imagem">
+	</br></br>
+	
+	<input type="submit" class="btn btn-primary">
+
+</form>

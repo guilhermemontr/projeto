@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de modalidades' /}
+
+#{list items: lista, as:'i'}
+
+	<a href='@{Modalidades.editar(i.id)}' >Editar</a>
+	
+	<a href='@{Modalidades.deletar(i.id)}' >Deletar</a>
+	
+	${i.nome}	<br/>
+
+#{/list}

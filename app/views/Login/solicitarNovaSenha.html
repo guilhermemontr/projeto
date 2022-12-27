@@ -1,0 +1,68 @@
+#{extends 'main.html' /}
+#{set title:'Solicitação' /}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitado</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+</head>
+<body class="bg-primary bg-opacity-25">
+
+    <section class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto rounded shadow bg-white">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="m-5 text-center">
+                                <h1>O link da nova senha foi enviado para o seu e-mail.</h1>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                    <div class="col-9">
+                                        <div class="text-end">
+                                            <a href="@{Login.form}">Voltar para a página de Login</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        </div>
+
+                        <div class="col-md-6">
+                            <div>
+                                <img src="/public/images/mail.svg" alt="login" class="img-fluid p-5">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+<form action="@{Login.solicitarNovaSenha}" method="POST">
+
+E-mail <input name="email"> <br/>
+
+<button>Solicitar nova senha</button>
+
+</form> -->

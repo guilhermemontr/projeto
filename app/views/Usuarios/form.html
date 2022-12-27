@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+
+<a href="@{Usuarios.form}">Cadastro</a>
+<a href="@{Usuarios.listar}">Lista</a>
+<a href="@{Login.sair}">Sair</a>
+<br/>
+    	
+
+<form action="@{Usuarios.salvar}">
+
+	<input type="hidden" name="usuario.id" value="${usuario?.id}" />
+
+	Nome <input type="text" name="usuario.nome" value="${usuario?.nome}" /> 
+	<div class="vermelho">#{error 'usuario.nome' /}</div>
+	 
+	
+	E-mail <input type="text" name="usuario.email" value="${usuario?.email}" />
+	<div class="vermelho">#{error 'usuario.email' /}</div>
+	
+	
+	Senha <input type="password" name="senha" value="" /> 
+	<div class="vermelho">#{error 'usuario.senha' /}</div>
+	
+	
+	Confirmação da senha <input type="password" name="usuario.confirmacaoSenha" value"" /> </br>
+	
+    <!-- Data de Cadastro <input type="text" name="usuario.data" class="date" value=""> </br> -->
+	
+	Nivel 
+	<select name="usuario.nivel">
+		<option value="0" #{if usuario?.nivel == 0} selected #{/if}>Comum</option>
+		<option value="1" #{if usuario?.nivel == 1} selected #{/if}>Admin</option>
+	</select>
+	<div class="vermelho">#{error 'usuario.nivel' /}</div>
+	 <br/>
+	
+	<button>Salvar</button>
+</form>

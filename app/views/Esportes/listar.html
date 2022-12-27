@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Eventos' /}
+
+<a href="@{Esportes.form}">Formulário</a>
+<a href="@{Esportes.listar}">Listagem</a>
+</br></br>
+
+#{list items: lista, as:'i'}
+
+		<img src = "@{Esportes.mostrarImagem(i.id)}" />
+		
+		${i.nome} - ${i.descriçao} - ${i.programas}  /  
+		
+		<a href='@{Esportes.editar(i.id)}'>Editar</a>
+		<a href='@{Esportes.deletar(i.id)}'>Deletar</a>
+		
+		</br>
+
+#{/list}
